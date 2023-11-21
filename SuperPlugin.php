@@ -31,7 +31,7 @@ define( 'SUPER_PLUGIN_MINIMUM_WP_VERSION', '6.0' );
 define( 'SUPER_PLUGIN_MINIMUM_PHP_VERSION', '8.0' );
 
 // Include autoloader.
-require_once SUPER_PLUGIN_DIR . 'includes/installation/install.php';
+require_once SUPER_PLUGIN_DIR . 'includes/installation/class-install.php';
 
 // Include the main plugin class.
 use SuperPlugin\Includes\Installation\Install as Installation;
