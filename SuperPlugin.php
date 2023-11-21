@@ -20,6 +20,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define constants.
+
+define( 'SUPER_PLUGIN_NAME', 'SuperPlugin' );
 define( 'SUPER_PLUGIN_VERSION', '1.0.0' );
 define( 'SUPER_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SUPER_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -29,7 +31,7 @@ define( 'SUPER_PLUGIN_MINIMUM_WP_VERSION', '6.0' );
 define( 'SUPER_PLUGIN_MINIMUM_PHP_VERSION', '8.0' );
 
 // Include autoloader.
-require_once SUPER_PLUGIN_DIR . 'autoload.php';
+require_once SUPER_PLUGIN_DIR . 'includes/installation/install.php';
 
 // Include the main plugin class.
 use SuperPlugin\Includes\Installation\Install as Installation;
