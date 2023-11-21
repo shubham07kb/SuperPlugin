@@ -47,6 +47,8 @@ register_activation_hook( __FILE__, 'super_plugin_activation' );
  * @since 1.0.0
  */
 function super_plugin_activation() {
+
+	// Call the activate method.
 	Installation::activate();
 }
 
@@ -61,6 +63,8 @@ register_deactivation_hook( __FILE__, 'super_plugin_deactivate' );
  * @since 1.0.0
  */
 function super_plugin_deactivate() {
+
+	// Call the deactivate method.
 	Installation::deactivate();
 }
 

@@ -27,7 +27,9 @@ class Install {
 	 * @since 1.0.0
 	 */
 	public static function activate() {
-		// Do something.
+	
+		// Flush rewrite rules.
+		flush_rewrite_rules();
 	}
 
 	/**
@@ -38,7 +40,9 @@ class Install {
 	 * @since 1.0.0
 	 */
 	public static function deactivate() {
-		// Do something.
+
+		// Flush rewrite rules.
+		flush_rewrite_rules();
 	}
 
 	/**
