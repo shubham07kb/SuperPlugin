@@ -10,6 +10,9 @@
 
 spl_autoload_register(
 	function ( $autoloader_class ) {
+		if ( !str_starts_with( $autoloader_class, SUPER_PLUGIN_NAME ) ) {
+	        return;
+	    }
 		$autoloader_class       = str_replace( '_', '-', strtolower( $autoloader_class ) );
 		$autoloader_class_array = explode( '\\', $autoloader_class );
 		$autoloader_class_array[ count( $autoloader_class_array ) - 1 ] = 'class-' . $autoloader_class_array[ count( $autoloader_class_array ) - 1 ];
