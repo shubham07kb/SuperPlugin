@@ -24,8 +24,8 @@ spl_autoload_register(
 		$file = plugin_dir_path( __FILE__ ) . str_replace( '\\', '/', $autoloader_class ) . '.php';
 
 		// If the file exists, require it.
-		var_dump($file);
-		die();
+		// var_dump($file);
+		// die();
 		if ( file_exists( $file ) ) {
 			require_once $file;
 		}
