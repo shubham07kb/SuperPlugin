@@ -31,10 +31,14 @@ define( 'SUPER_PLUGIN_MINIMUM_WP_VERSION', '6.0' );
 define( 'SUPER_PLUGIN_MINIMUM_PHP_VERSION', '8.0' );
 
 // Include autoloader.
-// require_once SUPER_PLUGIN_DIR . 'includes/installation/class-install.php';
+require_once SUPER_PLUGIN_DIR . 'autoload.php';
 
 // Include the main plugin class.
-// use SuperPlugin\Includes\Installation\Install as Installation;
+use SuperPlugin\Includes\Installation\Install as Installation;
+use SuperPlugin\Includes\Custom_Post_Type\Post_Types;
+
+$auhf=new Post_Types();
+$auhf->register_post_types();
 
 // Installation Hooks.
 
@@ -51,7 +55,7 @@ register_activation_hook( __FILE__, 'super_plugin_activation' );
 function super_plugin_activation() {
 
 	// Call the activate method.
-	// Installation::activate();
+	Installation::activate();
 }
 
 // Register deactivation hook.
@@ -67,7 +71,7 @@ register_deactivation_hook( __FILE__, 'super_plugin_deactivate' );
 function super_plugin_deactivate() {
 
 	// Call the deactivate method.
-	// Installation::deactivate();
+	Installation::deactivate();
 }
 
 // Register uninstall hook.
@@ -81,5 +85,5 @@ register_uninstall_hook( __FILE__, 'super_plugin_uninstall' );
  * @since 1.0.0
  */
 function super_plugin_uninstall() {
-	// Installation::uninstall();
+	Installation::uninstall();
 }
