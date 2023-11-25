@@ -28,7 +28,7 @@ class Post_Types {
 	 */
 	public function register_post_types() {
 
-		echo 'Post_Types';
-		die();
+		echo 'Post_Types bcdhjsvbdhasbfjhdasdsfbdjksbdfsk';
+		// die();
 	}
 }

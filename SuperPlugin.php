@@ -55,7 +55,8 @@ register_activation_hook( __FILE__, 'super_plugin_activation' );
 function super_plugin_activation() {
 
 	// Call the activate method.
-	Installation::activate();
+	$sp_install_call = new Installation( 'activate' );
+
 }
 
 // Register deactivation hook.
@@ -71,7 +72,7 @@ register_deactivation_hook( __FILE__, 'super_plugin_deactivate' );
 function super_plugin_deactivate() {
 
 	// Call the deactivate method.
-	Installation::deactivate();
+	$sp_install_call = new Installation( 'deactivate' );
 }
 
 // Register uninstall hook.
@@ -85,5 +86,7 @@ register_uninstall_hook( __FILE__, 'super_plugin_uninstall' );
  * @since 1.0.0
  */
 function super_plugin_uninstall() {
-	Installation::uninstall();
+	
+	// Call the uninstall method.
+	$sp_install_call = new Installation( 'uninstall' );
 }

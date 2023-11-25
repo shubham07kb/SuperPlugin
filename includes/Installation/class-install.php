@@ -18,6 +18,27 @@ namespace SuperPlugin\Includes\Installation;
  * @since 1.0.0
  */
 class Install {
+
+	/**
+	 * Install constructor.
+	 *
+	 * @param string $type Type of installation.
+	 */
+	public function __construct( $type ) {
+
+		// Call the appropriate method.
+		switch ( $type ) {
+			case 'activate':
+				self::activate();
+				break;
+			case 'deactivate':
+				self::deactivate();
+				break;
+			case 'uninstall':
+				self::uninstall();
+				break;
+		}
+	}
 	
 	/**
 	 * Activate
