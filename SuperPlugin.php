@@ -34,7 +34,6 @@ define( 'SUPER_PLUGIN_MINIMUM_PHP_VERSION', '8.0' );
 require_once SUPER_PLUGIN_DIR . 'autoload.php';
 
 // Include the main plugin class.
-use SuperPlugin\Includes\Installation\Install as Installation;
 use SuperPlugin\Includes\Custom_Post_Type\Post_Types;
 
 $auhf=new Post_Types();
@@ -55,8 +54,7 @@ register_activation_hook( __FILE__, 'super_plugin_activation' );
 function super_plugin_activation() {
 
 	// Call the activate method.
-	$sp_install_call = new Installation( 'activate' );
-
+	
 }
 
 // Register deactivation hook.
@@ -72,7 +70,7 @@ register_deactivation_hook( __FILE__, 'super_plugin_deactivate' );
 function super_plugin_deactivate() {
 
 	// Call the deactivate method.
-	$sp_install_call = new Installation( 'deactivate' );
+	
 }
 
 // Register uninstall hook.
@@ -88,5 +86,5 @@ register_uninstall_hook( __FILE__, 'super_plugin_uninstall' );
 function super_plugin_uninstall() {
 	
 	// Call the uninstall method.
-	$sp_install_call = new Installation( 'uninstall' );
+	
 }
