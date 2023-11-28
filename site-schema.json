@@ -1,0 +1,52 @@
+{
+	"title": "Schema for the Plugin Config",
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"definitions": {
+		
+	},
+	"type": "object",
+	"properties": {
+		"$schema": {
+			"description": "JSON schema URI for site.json.",
+			"type": "string"
+		},
+		"version": {
+			"description": "Version of site.json to use.",
+			"type": "integer",
+			"enum": [ 1 ]
+		},
+		"cpt": {
+			"description": "Can add multiple post types and there settings.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"active": {
+						"description": "Whether or not the post type is active.",
+						"type": "boolean"
+					},
+					"name": {
+						"description": "Name of the post type.",
+						"type": "string"
+					},
+					"slug": {
+						"description": "Slug of the post type.",
+						"type": "string"
+					},
+					"singular": {
+						"description": "Singular name for the post type.",
+						"type": "string"
+					},
+					"plural": {
+						"description": "Plural name for the post type.",
+						"type": "string"
+					}
+				},
+				"required": [ "name", "singular", "plural" ],
+				"additionalProperties": false
+			}
+		}
+	},
+	"required": [ "version" ],
+	"additionalProperties": false
+}

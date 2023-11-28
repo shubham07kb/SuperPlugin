@@ -1,0 +1,20 @@
+{
+	"$schema": "./site-schema.json",
+	"version": 1,
+	"cpt": [
+		{
+			"active": true,
+			"name": "movies",
+			"slug": "movies",
+			"plural": "Movies",
+			"singular": "Movie"
+		},
+		{
+			"active": true,
+			"name": "actors",
+			"slug": "actors",
+			"plural": "Actors",
+			"singular": "Actor"
+		}
+	]
+}
