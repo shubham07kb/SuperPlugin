@@ -59,17 +59,20 @@ class Settings {
 	 */
 	public function settings_page() {
 		wp_enqueue_style('superplugin-admin');
+		$setting_page_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]";
+		if (isset($_GET['po']) && $_GET['po'] != "") {
+			$p = $_GET['po'];
+		} else {
+			$p = "home";
+		}
 		?>
 		<div class="wrap">
-			<h1>SuperPlugin Settings</h1>
-			<p>Welcome to SuperPlugin Settings!</p>
-			<form method="post" action="options.php">
-				<?php
-				settings_fields('superplugin_settings');
-				do_settings_sections('superplugin_settings');
-				submit_button();
-				?>
-			</form>
+		<div class="spmc">
+			<a href="<?php echo $setting_page_link."?page=superplugin_settings"; ?>" class="spm left<?php echo $p==="home"?" sel":""; ?>">Home</a>
+			<a href="<?php echo $setting_page_link."?page=superplugin_settings&po=settings"; ?>" class="spm in<?php echo $p==="settings"?" sel":""; ?>">Settings</a>
+    		<a href="<?php echo $setting_page_link."?page=superplugin_settings&po=url"; ?>" class="spm in<?php echo $p==="url"?" sel":""; ?>">Url</a>
+    		<a href="<?php echo $setting_page_link."?page=superplugin_settings&po=other"; ?>" class="spm right<?php echo $p==="other"?" sel":""; ?>">Others</a>
+		</div>
 		</div>
 		<?php
 	}
@@ -80,10 +83,21 @@ class Settings {
 	 * @since 1.0.0
 	 */
 	function url_shortner() {
+		wp_enqueue_style('superplugin-admin');
+		$setting_page_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]?page=superplugin_url_shortner";
+		if (isset($_GET['po']) && $_GET['po'] != "") {
+			$p = $_GET['po'];
+		} else {
+			$p = "home";
+		}
 		?>
 		<div class="wrap">
-			<h1>URL Settings</h1>
-			<p>Manage URL settings here.</p>
+		<div class="spmc">
+			<a href="<?php echo $setting_page_link.""; ?>" class="spm left<?php echo $p==="home"?" sel":""; ?>">Home</a>
+			<a href="<?php echo $setting_page_link."&po=settings"; ?>" class="spm in<?php echo $p==="settings"?" sel":""; ?>">Settings</a>
+    		<a href="<?php echo $setting_page_link."&po=url"; ?>" class="spm in<?php echo $p==="url"?" sel":""; ?>">Url</a>
+    		<a href="<?php echo $setting_page_link."&po=other"; ?>" class="spm right<?php echo $p==="other"?" sel":""; ?>">Others</a>
+		</div>
 		</div>
 		<?php
 	}

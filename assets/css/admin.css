@@ -1,1 +1,55 @@
 /* Plugin Admin CSS */
+
+:root {
+	--spm-lining-color: #1c2328;
+}
+.spmc {
+	position: relative;
+	top: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	width: 100%;
+	height: 10px;
+}
+
+.spm {
+	padding: 10px;
+	min-width: 75px;
+	border-bottom: 2px solid var(--spm-lining-color);
+	text-decoration: none;
+	color: black;
+}
+
+.spm.left {
+	border-right: 0.5px solid;
+}
+
+.spm.right {
+	border-left: 0.5px solid;
+}
+
+.spm.in {
+	border-left: 0.5px solid;
+	border-right: 0.5px solid;
+}
+
+.spm.left.sel {
+	border-top: 2px solid var(--spm-lining-color);
+	border-right: 2px solid var(--spm-lining-color);
+}
+
+.spm.right.sel {
+	border-left: 2px solid var(--spm-lining-color);
+	border-top: 2px solid var(--spm-lining-color);
+}
+
+.spm.in.sel {
+	border-left: 2px solid var(--spm-lining-color);
+	border-top: 2px solid var(--spm-lining-color);
+	border-right: 2px solid var(--spm-lining-color);
+}
+
+.spm.sel {
+	border-bottom: 0;
+}
